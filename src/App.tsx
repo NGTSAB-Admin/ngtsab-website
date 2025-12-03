@@ -20,6 +20,7 @@ import StartBoard from "./pages/resources/StartBoard";
 
 // Blog
 import BlogIndex from "./pages/blog/BlogIndex";
+import BlogPost from "./pages/blog/BlogPost";
 
 // Legislation pages
 import LegislationIndex from "./pages/legislation/LegislationIndex";
@@ -54,7 +55,8 @@ const App = () => (
           
           {/* Blog */}
           <Route path="/blog" element={<BlogIndex />} />
-          
+          <Route path="/blog/:id" element={<BlogPost />} />
+
           {/* Legislation Routes */}
           <Route path="/legislation" element={<LegislationIndex />} />
           <Route path="/legislation/why" element={<WhyAutoEnroll />} />
