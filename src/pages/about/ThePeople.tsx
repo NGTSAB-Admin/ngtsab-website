@@ -2,24 +2,130 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { MapPin, Mail, ExternalLink } from "lucide-react";
 
 const leadership = [
   { name: "Carter FitzGerald", role: "President", initials: "CF", bio: "Leading NGTSAB's national advocacy efforts and strategic direction.", slug: "carter-fitzgerald", location: "Texas" },
   { name: "Abigail Riead", role: "Vice President", initials: "AR", bio: "Coordinating state-level initiatives and board development programs.", slug: "abigail-riead", location: "Virginia" },
   { name: "Caleb Olson", role: "Vice President", initials: "CO", bio: "Coordinating state-level initiatives and board development programs.", slug: "caleb-olson", location: "Minnesota" },
-  { name: "Ann Mary Thomas", role: "Executive Board Member", initials: "AT", bio: "Contributing to organizational strategy and student advocacy initiatives.", slug: "ann-mary-thomas", location: "California" },
-  { name: "Haley Becker", role: "Executive Board Member", initials: "HB", bio: "Contributing to organizational strategy and student advocacy initiatives.", slug: "haley-becker", location: "Ohio" },
+  { name: "Ann Mary Thomas", role: "Executive Board Member", initials: "AT", bio: "Contributing to organizational strategy and student advocacy initiatives.", slug: "ann-mary-thomas", location: "North Carolina" },
+  { name: "Haley Becker", role: "Executive Board Member", initials: "HB", bio: "Contributing to organizational strategy and student advocacy initiatives.", slug: "haley-becker", location: "Texas" },
 ];
 
-const directors = [
-  { name: "Jordan Lee", role: "Director of Legislation", initials: "JL" },
-  { name: "Priya Patel", role: "Director of Communications", initials: "PP" },
-  { name: "David Kim", role: "Director of Outreach", initials: "DK" },
-  { name: "Taylor Martinez", role: "Director of Education", initials: "TM" },
-  { name: "Olivia Thompson", role: "Director of Events", initials: "OT" },
-  { name: "Noah Anderson", role: "Director of Technology", initials: "NA" },
+interface StateRep {
+  name: string;
+  initials: string;
+  city: string;
+  state: string;
+  bio: string;
+  email?: string;
+  isExecutive?: boolean;
+  slug?: string;
+}
+
+const stateRepresentatives: StateRep[] = [
+  { name: "Megan Brooks", initials: "MB", city: "Mesa", state: "Arizona", bio: "Advocating for gifted education initiatives in Arizona.", email: "megan@ngtsab.org" },
+  { name: "Wensen Fang", initials: "WF", city: "Boulder", state: "Colorado", bio: "Working to expand gifted programs across Colorado schools.", email: "wensen@ngtsab.org" },
+  { name: "Violet Sandridge", initials: "VS", city: "Boulder", state: "Colorado", bio: "Promoting student voice in Colorado's gifted education policy.", email: "violet@ngtsab.org" },
+  { name: "Ann Mary Thomas", initials: "AT", city: "Chapel Hill", state: "North Carolina", bio: "Contributing to organizational strategy and student advocacy initiatives.", isExecutive: true, slug: "ann-mary-thomas" },
+  { name: "Haley Becker", initials: "HB", city: "Houston", state: "Texas", bio: "Contributing to organizational strategy and student advocacy initiatives.", isExecutive: true, slug: "haley-becker" },
 ];
+
+const allStates = [
+  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+  "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+  "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri",
+  "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
+  "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
+  "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington",
+  "West Virginia", "Wisconsin", "Wyoming"
+];
+
+const getRepsByState = () => {
+  const repsByState: Record<string, StateRep[]> = {};
+  stateRepresentatives.forEach(rep => {
+    if (!repsByState[rep.state]) {
+      repsByState[rep.state] = [];
+    }
+    repsByState[rep.state].push(rep);
+  });
+  return repsByState;
+};
+
+const RepCard = ({ rep }: { rep: StateRep }) => {
+  if (rep.isExecutive && rep.slug) {
+    return (
+      <Link to={`/about/people/${rep.slug}`}>
+        <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors cursor-pointer">
+          <Avatar className="h-10 w-10">
+            <AvatarFallback className="bg-primary text-primary-foreground text-sm">
+              {rep.initials}
+            </AvatarFallback>
+          </Avatar>
+          <div className="flex-1 min-w-0">
+            <p className="font-medium text-sm truncate">{rep.name}</p>
+            <p className="text-xs text-muted-foreground">{rep.city}</p>
+          </div>
+          <ExternalLink className="h-3 w-3 text-muted-foreground" />
+        </div>
+      </Link>
+    );
+  }
+
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors cursor-pointer">
+          <Avatar className="h-10 w-10">
+            <AvatarFallback className="bg-secondary text-secondary-foreground text-sm">
+              {rep.initials}
+            </AvatarFallback>
+          </Avatar>
+          <div className="flex-1 min-w-0">
+            <p className="font-medium text-sm truncate">{rep.name}</p>
+            <p className="text-xs text-muted-foreground">{rep.city}</p>
+          </div>
+        </div>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>{rep.name}</DialogTitle>
+        </DialogHeader>
+        <div className="space-y-4">
+          <div className="flex items-center gap-4">
+            <Avatar className="h-20 w-20">
+              <AvatarFallback className="bg-secondary text-secondary-foreground text-2xl">
+                {rep.initials}
+              </AvatarFallback>
+            </Avatar>
+            <div>
+              <p className="font-medium">State Representative</p>
+              <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                <MapPin className="h-3 w-3" />
+                <span>{rep.city}, {rep.state}</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 className="font-medium mb-1">Biography</h4>
+            <p className="text-sm text-muted-foreground">{rep.bio}</p>
+          </div>
+          {rep.email && (
+            <div>
+              <h4 className="font-medium mb-1">Contact</h4>
+              <a href={`mailto:${rep.email}`} className="flex items-center gap-2 text-sm text-primary hover:underline">
+                <Mail className="h-4 w-4" />
+                {rep.email}
+              </a>
+            </div>
+          )}
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+};
 
 export default function ThePeople() {
   return (
@@ -61,19 +167,43 @@ export default function ThePeople() {
             ))}
           </div>
 
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Board of Directors</h2>
-          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {directors.map((person) => (
-              <Card key={person.name} className="shadow-card text-center p-4">
-                <Avatar className="h-16 w-16 mx-auto mb-3">
-                  <AvatarFallback className="bg-secondary text-secondary-foreground">
-                    {person.initials}
-                  </AvatarFallback>
-                </Avatar>
-                <h3 className="font-semibold text-sm">{person.name}</h3>
-                <p className="text-xs text-muted-foreground">{person.role}</p>
-              </Card>
-            ))}
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">State Representatives</h2>
+          <p className="text-muted-foreground max-w-3xl mb-8">
+            State Representatives serve as the voice of gifted students in their state. They advocate for policy changes, 
+            connect local students with NGTSAB resources, and help build grassroots support for gifted education initiatives.
+          </p>
+          
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {allStates.map((state) => {
+              const reps = getRepsByState()[state];
+              const hasReps = reps && reps.length > 0;
+              
+              return (
+                <Card key={state} className={`shadow-card ${hasReps ? '' : 'bg-muted/50'}`}>
+                  <CardHeader className="p-3 pb-2">
+                    <CardTitle className="text-sm font-semibold">{state}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-3 pt-0">
+                    {hasReps ? (
+                      <div className="space-y-1">
+                        {reps.map((rep) => (
+                          <RepCard key={rep.name} rep={rep} />
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="text-center py-2">
+                        <p className="text-xs text-muted-foreground mb-2">No representative yet</p>
+                        <Link to="/apply">
+                          <Button variant="outline" size="sm" className="text-xs h-7">
+                            Apply Now
+                          </Button>
+                        </Link>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
