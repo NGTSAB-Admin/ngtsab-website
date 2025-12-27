@@ -3,10 +3,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const leadership = [
-  { name: "Alex Johnson", role: "President", initials: "AJ", bio: "Leading NGTSAB's national advocacy efforts and strategic direction." },
-  { name: "Sarah Chen", role: "Vice President", initials: "SC", bio: "Coordinating state-level initiatives and board development programs." },
-  { name: "Marcus Williams", role: "Secretary", initials: "MW", bio: "Managing organizational communications and documentation." },
-  { name: "Emily Rodriguez", role: "Treasurer", initials: "ER", bio: "Overseeing financial operations and grant management." },
+  { name: "Carter FitzGerald", role: "President", initials: "CF", bio: "Leading NGTSAB's national advocacy efforts and strategic direction." },
+  { name: "Abigail Riead", role: "Vice President", initials: "AR", bio: "Coordinating state-level initiatives and board development programs." },
+  { name: "Caleb Olson", role: "Vice President", initials: "CO", bio: "Coordinating state-level initiatives and board development programs." },
+  { name: "Ann Mary Thomas", role: "Executive Board Member", initials: "AT", bio: "Contributing to organizational strategy and student advocacy initiatives." },
+  { name: "Haley Becker", role: "Executive Board Member", initials: "HB", bio: "Contributing to organizational strategy and student advocacy initiatives." },
 ];
 
 const directors = [
