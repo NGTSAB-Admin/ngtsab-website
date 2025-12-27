@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { MapPin } from "lucide-react";
 
 const leadership = [
-  { name: "Carter FitzGerald", role: "President", initials: "CF", bio: "Leading NGTSAB's national advocacy efforts and strategic direction." },
-  { name: "Abigail Riead", role: "Vice President", initials: "AR", bio: "Coordinating state-level initiatives and board development programs." },
-  { name: "Caleb Olson", role: "Vice President", initials: "CO", bio: "Coordinating state-level initiatives and board development programs." },
-  { name: "Ann Mary Thomas", role: "Executive Board Member", initials: "AT", bio: "Contributing to organizational strategy and student advocacy initiatives." },
-  { name: "Haley Becker", role: "Executive Board Member", initials: "HB", bio: "Contributing to organizational strategy and student advocacy initiatives." },
+  { name: "Carter FitzGerald", role: "President", initials: "CF", bio: "Leading NGTSAB's national advocacy efforts and strategic direction.", slug: "carter-fitzgerald", location: "Texas" },
+  { name: "Abigail Riead", role: "Vice President", initials: "AR", bio: "Coordinating state-level initiatives and board development programs.", slug: "abigail-riead", location: "Virginia" },
+  { name: "Caleb Olson", role: "Vice President", initials: "CO", bio: "Coordinating state-level initiatives and board development programs.", slug: "caleb-olson", location: "Minnesota" },
+  { name: "Ann Mary Thomas", role: "Executive Board Member", initials: "AT", bio: "Contributing to organizational strategy and student advocacy initiatives.", slug: "ann-mary-thomas", location: "California" },
+  { name: "Haley Becker", role: "Executive Board Member", initials: "HB", bio: "Contributing to organizational strategy and student advocacy initiatives.", slug: "haley-becker", location: "Ohio" },
 ];
 
 const directors = [
@@ -36,20 +38,26 @@ export default function ThePeople() {
           <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Executive Board</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {leadership.map((person) => (
-              <Card key={person.name} className="shadow-card hover:shadow-hover transition-shadow text-center">
-                <CardHeader>
-                  <Avatar className="h-24 w-24 mx-auto mb-4">
-                    <AvatarFallback className="bg-primary text-primary-foreground text-2xl">
-                      {person.initials}
-                    </AvatarFallback>
-                  </Avatar>
-                  <CardTitle>{person.name}</CardTitle>
-                  <CardDescription className="text-primary font-medium">{person.role}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">{person.bio}</p>
-                </CardContent>
-              </Card>
+              <Link key={person.name} to={`/about/people/${person.slug}`}>
+                <Card className="shadow-card hover:shadow-hover transition-shadow text-center h-full cursor-pointer">
+                  <CardHeader>
+                    <Avatar className="h-24 w-24 mx-auto mb-4">
+                      <AvatarFallback className="bg-primary text-primary-foreground text-2xl">
+                        {person.initials}
+                      </AvatarFallback>
+                    </Avatar>
+                    <CardTitle>{person.name}</CardTitle>
+                    <CardDescription className="text-primary font-medium">{person.role}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center justify-center gap-1 text-xs text-muted-foreground mb-2">
+                      <MapPin className="h-3 w-3" />
+                      <span>{person.location}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{person.bio}</p>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
 

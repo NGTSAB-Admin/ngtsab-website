@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/about/AboutUs";
 import ThePeople from "./pages/about/ThePeople";
 import TheMission from "./pages/about/TheMission";
+import PersonProfile from "./pages/about/PersonProfile";
 
 // Resource pages
 import Documents from "./pages/resources/Documents";
@@ -44,6 +45,7 @@ const App = () => (
           {/* About Routes */}
           <Route path="/about" element={<AboutUs />} />
           <Route path="/about/people" element={<ThePeople />} />
+          <Route path="/about/people/:personId" element={<PersonProfile />} />
           <Route path="/about/mission" element={<TheMission />} />
           
           {/* Resource Routes */}
