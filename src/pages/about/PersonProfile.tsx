@@ -31,7 +31,7 @@ const people = {
     location: "Highlands Ranch, CO",
     duties: "Coordinating state-level initiatives, leading legislative advocacy efforts, developing partnerships with education organizations, and supporting board member recruitment and training.",
     biography: "Caleb Olson serves as Vice President, bringing a unique perspective to gifted education advocacy. Caleb has been particularly focused on automatic enrollment legislation and has worked closely with state legislators to promote equitable access to gifted programs. His analytical approach and dedication to data-driven advocacy have strengthened NGTSAB's policy positions.",
-    email: "caleb.olson@ngtsab.org",
+    email: "colson@ngtsab.org",
   },
   "ann-mary-thomas": {
     name: "Ann Mary Thomas",
