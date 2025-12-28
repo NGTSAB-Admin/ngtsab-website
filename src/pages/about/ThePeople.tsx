@@ -8,11 +8,11 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { MapPin, Mail, ExternalLink, ChevronDown } from "lucide-react";
 
 const leadership = [
-  { name: "Carter FitzGerald", role: "President", initials: "CF", bio: "Leading NGTSAB's national advocacy efforts and strategic direction.", slug: "carter-fitzgerald", location: "Texas" },
-  { name: "Abigail Riead", role: "Vice President", initials: "AR", bio: "Coordinating state-level initiatives and board development programs.", slug: "abigail-riead", location: "Virginia" },
-  { name: "Caleb Olson", role: "Vice President", initials: "CO", bio: "Coordinating state-level initiatives and board development programs.", slug: "caleb-olson", location: "Minnesota" },
-  { name: "Ann Mary Thomas", role: "Executive Board Member", initials: "AT", bio: "Contributing to organizational strategy and student advocacy initiatives.", slug: "ann-mary-thomas", location: "North Carolina" },
-  { name: "Haley Becker", role: "Executive Board Member", initials: "HB", bio: "Contributing to organizational strategy and student advocacy initiatives.", slug: "haley-becker", location: "Texas" },
+  { name: "Carter FitzGerald", role: "President", initials: "CF", bio: "Carter leads our national advocacy efforts and strategic direction. He oversees organizational operations and represents NGTSAB at national conferences.", slug: "carter-fitzgerald", location: "Highlands Ranch, CO" },
+  { name: "Abigail Riead", role: "Vice President", initials: "AR", bio: "Abigail coordinates state-level initiatives and board development programs. She manages outreach efforts and supports strategic planning.", slug: "abigail-riead", location: "Highlands Ranch, CO" },
+  { name: "Caleb Olson", role: "Vice President", initials: "CO", bio: "Caleb coordinates state-level initiatives and board development programs. He focuses on building partnerships and expanding our network.", slug: "caleb-olson", location: "Highlands Ranch, CO" },
+  { name: "Ann Mary Thomas", role: "Executive Board Member", initials: "AT", bio: "Ann Mary contributes to organizational strategy and student advocacy initiatives. She serves as North Carolina State Representative.", slug: "ann-mary-thomas", location: "Cary, NC" },
+  { name: "Haley Becker", role: "Executive Board Member", initials: "HB", bio: "Haley contributes to organizational strategy and student advocacy initiatives. She serves as Texas State Representative.", slug: "haley-becker", location: "Houston, TX" },
 ];
 
 interface StateRep {
@@ -27,11 +27,11 @@ interface StateRep {
 }
 
 const stateRepresentatives: StateRep[] = [
-  { name: "Megan Brooks", initials: "MB", city: "Mesa", state: "Arizona", bio: "Advocating for gifted education initiatives in Arizona.", email: "megan@ngtsab.org" },
-  { name: "Wensen Fang", initials: "WF", city: "Boulder", state: "Colorado", bio: "Working to expand gifted programs across Colorado schools.", email: "wensen@ngtsab.org" },
-  { name: "Violet Sandridge", initials: "VS", city: "Boulder", state: "Colorado", bio: "Promoting student voice in Colorado's gifted education policy.", email: "violet@ngtsab.org" },
-  { name: "Ann Mary Thomas", initials: "AT", city: "Chapel Hill", state: "North Carolina", bio: "Contributing to organizational strategy and student advocacy initiatives.", isExecutive: true, slug: "ann-mary-thomas" },
-  { name: "Haley Becker", initials: "HB", city: "Houston", state: "Texas", bio: "Contributing to organizational strategy and student advocacy initiatives.", isExecutive: true, slug: "haley-becker" },
+  { name: "Megan Brook", initials: "MB", city: "Mesa", state: "Arizona", bio: "Advocating for gifted education initiatives in Arizona.", email: "megan.brook@ngtsab.org" },
+  { name: "Wensen Fang", initials: "WF", city: "Boulder", state: "Colorado", bio: "Working to expand gifted programs across Colorado schools.", email: "wensen.fang@ngtsab.org" },
+  { name: "Violet Sandridge", initials: "VS", city: "Boulder", state: "Colorado", bio: "Promoting student voice in Colorado's gifted education policy.", email: "violet.sandridge@ngtsab.org" },
+  { name: "Ann Mary Thomas", initials: "AT", city: "Cary", state: "North Carolina", bio: "Executive Board Member and North Carolina State Representative. Ann Mary contributes to organizational strategy and student advocacy initiatives.", isExecutive: true, slug: "ann-mary-thomas", email: "annmary.thomas@ngtsab.org" },
+  { name: "Haley Becker", initials: "HB", city: "Houston", state: "Texas", bio: "Executive Board Member and Texas State Representative. Haley contributes to organizational strategy and student advocacy initiatives.", isExecutive: true, slug: "haley-becker", email: "haley.becker@ngtsab.org" },
 ];
 
 const allStates = [
@@ -184,14 +184,7 @@ export default function ThePeople() {
                   <Card className="shadow-card overflow-hidden">
                     <CollapsibleTrigger className="w-full p-3 flex items-center justify-between hover:bg-muted/50 transition-colors">
                       <span className="text-sm font-semibold">{state}</span>
-                      <div className="flex items-center gap-2">
-                        {hasReps && (
-                          <span className="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-                            {reps.length}
-                          </span>
-                        )}
-                        <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
-                      </div>
+                      <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
                     </CollapsibleTrigger>
                     <CollapsibleContent>
                       <CardContent className="p-3 pt-0">
