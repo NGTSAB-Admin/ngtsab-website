@@ -1,15 +1,22 @@
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Mail, MapPin } from "lucide-react";
+
+import carterPhoto from "@/assets/carter-fitzgerald.jpg";
+import abigailPhoto from "@/assets/abigail-riead.jpg";
+import calebPhoto from "@/assets/caleb-olson.jpg";
+import annMaryPhoto from "@/assets/ann-mary-thomas.jpg";
+import haleyPhoto from "@/assets/haley-becker.jpg";
 
 const people = {
   "carter-fitzgerald": {
     name: "Carter FitzGerald",
     role: "President",
     initials: "CF",
+    photo: carterPhoto,
     location: "Highlands Ranch, Colorado",
     duties: "President and Co-Founder of the NGTSAB. Contact if interested in joining our efforts.",
     biography: "Carter FitzGerald has been a passionate advocate for gifted education since middle school. As a student in Colorado's gifted program, Carter experienced firsthand both the benefits and challenges of gifted education. This experience inspired a commitment to ensuring all gifted students have access to appropriate educational opportunities. Carter has led an advocacy campaign for Automatic Enrollment in Colorado and has spoken at state and national education conferences about the importance of student voice in educational policy.",
@@ -19,6 +26,7 @@ const people = {
     name: "Abigail Riead",
     role: "Vice President",
     initials: "AR",
+    photo: abigailPhoto,
     location: "Highlands Ranch, Colorado",
     duties: "Communication and promotion.",
     biography: "High school Senior.",
@@ -28,6 +36,7 @@ const people = {
     name: "Caleb Olson",
     role: "Vice President",
     initials: "CO",
+    photo: calebPhoto,
     location: "Highlands Ranch, Colorado",
     duties: "Coordinating state-level initiatives, leading legislative advocacy efforts, developing partnerships with education organizations, and supporting board member recruitment and training.",
     biography: "Caleb Olson serves as Vice President, bringing a unique perspective to gifted education advocacy. Caleb has been particularly focused on automatic enrollment legislation and has worked closely with state legislators to promote equitable access to gifted programs. His analytical approach and dedication to data-driven advocacy have strengthened NGTSAB's policy positions.",
@@ -37,6 +46,7 @@ const people = {
     name: "Ann Mary Thomas",
     role: "Executive Board Member",
     initials: "AT",
+    photo: annMaryPhoto,
     location: "Cary, North Carolina",
     duties: "Policy expert.",
     biography: "High school senior. Passionate about educational opportunity.",
@@ -46,6 +56,7 @@ const people = {
     name: "Haley Becker",
     role: "Executive Board Member",
     initials: "HB",
+    photo: haleyPhoto,
     location: "Houston, Texas",
     duties: "Contributing to organizational strategy, serving as Texas State Representative, managing communications and social media presence, and developing content for student resources.",
     biography: "Haley Becker serves as an Executive Board Member and Texas State Representative, bringing creativity and communication expertise to NGTSAB. Haley has been instrumental in expanding the organization's digital presence and connecting with students nationwide. Haley's focus on storytelling and community building has helped amplify student voices and share success stories from gifted programs across the country.",
@@ -80,6 +91,7 @@ export default function PersonProfile() {
           </Link>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
             <Avatar className="h-40 w-40 border-4 border-primary-foreground/20">
+              <AvatarImage src={person.photo} alt={person.name} className="object-cover" />
               <AvatarFallback className="bg-primary-foreground/10 text-primary-foreground text-4xl">
                 {person.initials}
               </AvatarFallback>
@@ -120,24 +132,6 @@ export default function PersonProfile() {
             </div>
 
             <div className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="font-serif">Photo</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="aspect-[3/4] bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-border">
-                    <div className="text-center text-muted-foreground">
-                      <Avatar className="h-24 w-24 mx-auto mb-3">
-                        <AvatarFallback className="bg-primary text-primary-foreground text-2xl">
-                          {person.initials}
-                        </AvatarFallback>
-                      </Avatar>
-                      <p className="text-sm">Photo coming soon</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
               <Card>
                 <CardHeader>
                   <CardTitle className="font-serif">Contact</CardTitle>
