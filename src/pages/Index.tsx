@@ -129,6 +129,9 @@ const Index = () => {
               <Button asChild size="lg" variant="outline">
                 <Link to="/resources/start-board">Start a GT Board</Link>
               </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link to="/contact">Contact Us</Link>
+              </Button>
             </div>
           </div>
         </div>

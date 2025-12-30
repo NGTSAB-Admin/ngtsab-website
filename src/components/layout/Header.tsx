@@ -126,7 +126,10 @@ export function Header() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-3">
+          <Button asChild variant="outline">
+            <Link to="/contact">Contact</Link>
+          </Button>
           <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
             <Link to="/apply">Apply Now</Link>
           </Button>
@@ -147,9 +150,14 @@ export function Header() {
               Blog
             </Link>
             <MobileDropdown title="Legislation" links={legislationLinks} />
-            <Button asChild className="w-full mt-4 bg-primary text-primary-foreground">
-              <Link to="/apply" onClick={() => setMobileMenuOpen(false)}>Apply Now</Link>
-            </Button>
+            <div className="flex flex-col gap-2 mt-4">
+              <Button asChild variant="outline" className="w-full">
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+              </Button>
+              <Button asChild className="w-full bg-primary text-primary-foreground">
+                <Link to="/apply" onClick={() => setMobileMenuOpen(false)}>Apply Now</Link>
+              </Button>
+            </div>
           </nav>
         </div>}
     </header>;

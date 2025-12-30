@@ -30,6 +30,7 @@ import PromoteLegislation from "./pages/legislation/PromoteLegislation";
 
 // Applications
 import Apply from "./pages/Apply";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +67,7 @@ const App = () => (
           
           {/* Applications */}
           <Route path="/apply" element={<Apply />} />
+          <Route path="/contact" element={<Contact />} />
           
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />
