@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Mail, Linkedin, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -12,16 +12,13 @@ export function Footer() {
               The National Gifted and Talented Student Advocacy Board empowers student voices to improve gifted education nationwide.
             </p>
             <div className="flex space-x-4">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+              <a href="https://www.linkedin.com/company/national-gifted-and-talented-student-advocacy-board/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+              <a href="https://instagram.com/ngtsab" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="mailto:contact@ngtsab.org" className="hover:text-accent transition-colors">
+              <a href="mailto:connect@ngtsab.org" className="hover:text-accent transition-colors">
                 <Mail className="h-5 w-5" />
               </a>
             </div>

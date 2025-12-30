@@ -313,7 +313,7 @@ Remember, you don't have to do this alone. NGTSAB provides:
 - Training webinars on effective advocacy
 - State-specific guidance and resources
 
-Ready to get started? Contact us at advocacy@ngtsab.org to connect with our state policy team.
+Ready to get started? Contact us at connect@ngtsab.org to connect with our state policy team.
     `,
   },
   "6": {
