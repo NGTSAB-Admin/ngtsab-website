@@ -1,5 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { FileText, Download, ExternalLink } from "lucide-react";
 
 export default function Bylaws() {
   return (
@@ -16,50 +18,54 @@ export default function Bylaws() {
       <section className="py-16">
         <div className="container max-w-4xl">
           <Card className="shadow-card">
-            <CardContent className="p-8 prose prose-lg max-w-none">
-              <h2 className="font-serif text-2xl font-bold mb-4">Article I: Name and Purpose</h2>
-              <p className="text-muted-foreground mb-4">
-                <strong>Section 1.</strong> The name of this organization shall be the National Gifted and Talented Student Advocacy Board (NGTSAB).
-              </p>
-              <p className="text-muted-foreground mb-6">
-                <strong>Section 2.</strong> The purpose of NGTSAB shall be to advocate for improved gifted education practices, promote automatic enrollment legislation, and support the creation of student advocacy boards at all educational levels.
-              </p>
+            <CardContent className="p-8">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="p-3 bg-primary/10 rounded-lg">
+                  <FileText className="h-8 w-8 text-primary" />
+                </div>
+                <div>
+                  <h2 className="font-serif text-2xl font-bold mb-2">NGTSAB Official Bylaws</h2>
+                  <p className="text-muted-foreground">
+                    These bylaws establish the structure, governance, and operational procedures of the 
+                    National Gifted and Talented Student Advocacy Board. They outline membership requirements, 
+                    officer roles, meeting procedures, and amendment processes.
+                  </p>
+                </div>
+              </div>
 
-              <h2 className="font-serif text-2xl font-bold mb-4">Article II: Membership</h2>
-              <p className="text-muted-foreground mb-4">
-                <strong>Section 1.</strong> Membership is open to all students currently enrolled in middle school, high school, or higher education who share the organization's mission.
-              </p>
-              <p className="text-muted-foreground mb-6">
-                <strong>Section 2.</strong> Members in good standing are entitled to vote in elections, participate in committees, and access member resources.
-              </p>
+              <div className="flex flex-wrap gap-3 mb-8">
+                <Button asChild>
+                  <a 
+                    href="https://drive.google.com/file/d/1pxrq1idX-MFRfI1kCVx9KpXKWyn9Msh0/view" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Download Bylaws
+                  </a>
+                </Button>
+                <Button variant="outline" asChild>
+                  <a 
+                    href="https://drive.google.com/file/d/1pxrq1idX-MFRfI1kCVx9KpXKWyn9Msh0/view" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Open in New Tab
+                  </a>
+                </Button>
+              </div>
 
-              <h2 className="font-serif text-2xl font-bold mb-4">Article III: Officers</h2>
-              <p className="text-muted-foreground mb-4">
-                <strong>Section 1.</strong> The Executive Board shall consist of President, Vice President, Secretary, and Treasurer.
-              </p>
-              <p className="text-muted-foreground mb-4">
-                <strong>Section 2.</strong> Officers shall serve one-year terms and may be re-elected for up to two consecutive terms.
-              </p>
-              <p className="text-muted-foreground mb-6">
-                <strong>Section 3.</strong> Elections shall be held annually during the spring semester.
-              </p>
-
-              <h2 className="font-serif text-2xl font-bold mb-4">Article IV: Meetings</h2>
-              <p className="text-muted-foreground mb-4">
-                <strong>Section 1.</strong> Regular meetings shall be held monthly during the academic year.
-              </p>
-              <p className="text-muted-foreground mb-6">
-                <strong>Section 2.</strong> An annual conference shall be held each year to bring together members from across the nation.
-              </p>
-
-              <h2 className="font-serif text-2xl font-bold mb-4">Article V: Amendments</h2>
-              <p className="text-muted-foreground">
-                These bylaws may be amended by a two-thirds vote of the membership, provided that the proposed amendment has been submitted in writing at least 30 days prior to the vote.
-              </p>
-
-              <p className="text-sm text-muted-foreground mt-8 italic">
-                Last amended: January 2024
-              </p>
+              <div className="border rounded-lg overflow-hidden bg-muted/30">
+                <iframe 
+                  src="https://drive.google.com/file/d/1pxrq1idX-MFRfI1kCVx9KpXKWyn9Msh0/preview" 
+                  width="100%" 
+                  height="600"
+                  className="w-full"
+                  title="NGTSAB Bylaws Document"
+                  allow="autoplay"
+                />
+              </div>
             </CardContent>
           </Card>
         </div>
