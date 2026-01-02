@@ -5,7 +5,7 @@
 /applications	/apply		301
 /applying-for-ngtsab	/blog/recruiting-state-reps	301
 /do-our-worlds-align	/blog/ngtsab-nagc25	301
-/javits		/javits-testimony	301
+/javits		/blog/javits-testimony	301
 /national-gifted-and-talented-student-advocacy-board	/blog/about-ngtsab	301
 /author/*				/about/people/:splat				301
 /Caleb-olson			/about/people/caleb-olson		301
