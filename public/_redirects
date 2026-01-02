@@ -8,9 +8,9 @@
 /javits		/blog/javits-testimony	301
 /national-gifted-and-talented-student-advocacy-board	/blog/about-ngtsab	301
 /author/*				/about/people/:splat				301
-/Caleb-olson			/about/people/caleb-olson		301
-/Abigail-riead			/about/people/Abigail-riead		301
-/Carter-fitzgerald		/about/people/Carter-fitzgerald		301
-/people/Caleb-olson			/about/people/caleb-olson		301
-/people/Abigail-riead			/about/people/Abigail-riead		301
-/people/Carter-fitzgerald		/about/people/Carter-fitzgerald		301
+/caleb-olson			/about/people/caleb-olson		301
+/abigail-riead			/about/people/abigail-riead		301
+/carter-fitzgerald		/about/people/carter-fitzgerald		301
+/people/caleb-olson			/about/people/caleb-olson		301
+/people/abigail-riead			/about/people/abigail-riead		301
+/people/carter-fitzgerald		/about/people/carter-fitzgerald		301
