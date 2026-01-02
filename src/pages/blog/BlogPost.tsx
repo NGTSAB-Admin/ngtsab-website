@@ -16,7 +16,6 @@ import nagc25SessionImg from "@/assets/blog/ngtsab-nagc25-session.jpg";
 import nagc25GroupImg from "@/assets/blog/ngtsab-nagc25-group.jpg";
 import aboutFoundersImg from "@/assets/blog/ngtsab-about-founders.jpg";
 import recruitingImg from "@/assets/blog/ngtsab-recruiting.jpg";
-
 interface BlogPost {
   title: string;
   excerpt: string;
@@ -36,7 +35,6 @@ interface BlogPost {
     internal?: boolean;
   };
 }
-
 const posts: Record<string, BlogPost> = {
   "colorado-update-dec-2025": {
     title: "A December 2025 Update on Colorado's Automatic Enrollment",
@@ -44,8 +42,7 @@ const posts: Record<string, BlogPost> = {
     date: "December 29, 2025",
     category: "Legislation",
     author: "Carter FitzGerald",
-    content: (
-      <>
+    content: <>
         <p>Colorado is currently developing a new statewide automatic enrollment bill, led by Representative Jacque Phillips and created in collaboration with students from Mountain Vista High School. The proposed legislation follows the repeal of the John W. Buckner Automatic Enrollment in Advanced Course Grant Program under SB25‑315, which removed the grant funding mechanism but not the underlying policy goal.</p>
         
         <p>The current draft bill would establish a statewide automatic enrollment policy aligned with Postsecondary and Workforce Readiness (PWR) objectives. Instead of relying on a separate grant, the policy would integrate automatic enrollment into existing systems—advanced coursework, concurrent enrollment, and PWR pathways—ensuring continued access without requiring a separate funding structure.</p>
@@ -74,14 +71,13 @@ const posts: Record<string, BlogPost> = {
         <p>📩 Email us at: <a href="mailto:connect@ngtsab.org" className="text-primary hover:underline">connect@ngtsab.org</a></p>
         
         <p>Your voice can help shape one of Colorado's most important equity‑centered education policies.</p>
-      </>
-    ),
+      </>,
     embed: {
       type: "google-doc",
       src: "https://docs.google.com/document/d/e/2PACX-1vQ_TK778qRx4l80TDRJnpHqBGx4LBFWYAfJ3P9oSBb8JRWS8Bde44pOo-_uvWGgED-dwOd5HppQrLPF/pub?embedded=true",
       title: "Colorado Automatic Enrollment Bill Draft - December 2025",
-      link: "https://docs.google.com/document/d/12A47XFu1RlEDspHnsJEnT9hT6vxa7sk5sFV7EsZIJXs/edit?usp=sharing",
-    },
+      link: "https://docs.google.com/document/d/12A47XFu1RlEDspHnsJEnT9hT6vxa7sk5sFV7EsZIJXs/edit?usp=sharing"
+    }
   },
   "nagc26-proposals-open": {
     title: "NAGC26 Proposals are OPEN",
@@ -89,13 +85,12 @@ const posts: Record<string, BlogPost> = {
     date: "December 15, 2025",
     category: "Events",
     author: "Caleb Olson",
-    content: (
-      <>
+    content: <>
         <p>Proposal submissions are now open for NAGC26, the annual national conference hosted by the National Association for Gifted Children—the premiere gifted‑education conference in the United States. Each year, thousands of educators, psychologists, researchers, and policymakers gather to share best practices, explore new research, and shape the future of gifted education.</p>
         
         <p>Last year at NAGC25, NGTSAB leaders Carter FitzGerald, Abigail Riead, and Caleb Olson made history as the first student presenters in the conference's 70‑year history. Their session opened doors, changed minds, and signaled the beginning of a new era—one in which student expertise is valued alongside that of professionals.</p>
         
-        <h3>Why Student Voice Matters at NAGC</h3>
+        <h3 className="font-serif text-xl my-[10px]">Why Student Voice Matters at NAGC</h3>
         
         <p>NAGC is where national conversations happen. It is where policy ideas take shape, where educators learn new strategies, and where the field decides what comes next. If student voices aren't present, then students aren't represented in the decisions that directly impact them.</p>
         
@@ -122,12 +117,11 @@ const posts: Record<string, BlogPost> = {
         <p>If you need help shaping your idea, drafting your proposal, or preparing session content, NGTSAB is here to support you. Email us anytime at <a href="mailto:connect@ngtsab.org" className="text-primary hover:underline">connect@ngtsab.org</a>—and if you do submit a proposal, please let us know! We want to cheer you on and help however we can.</p>
         
         <p>This is a historic moment for student advocacy in gifted education. We hope to see many of you presenting at NAGC26 and continuing the movement our NGTSAB founders began.</p>
-      </>
-    ),
+      </>,
     cta: {
       text: "Submit Your NAGC26 Proposal",
-      link: "https://www.nagc.org/nagc26-call-for-proposals",
-    },
+      link: "https://www.nagc.org/nagc26-call-for-proposals"
+    }
   },
   "nagc-student-focus-group": {
     title: "NAGC's New Student Focus Group: A Milestone for Student Voice",
@@ -135,8 +129,7 @@ const posts: Record<string, BlogPost> = {
     date: "December 8, 2025",
     category: "Events",
     author: "Caleb Olson",
-    content: (
-      <>
+    content: <>
         <p>The National Association for Gifted Children (NAGC) has announced an exciting and unprecedented initiative: a new student focus group designed to better understand the lived experiences, needs, and challenges of gifted students. This focus group will be facilitated by former NAGC President Shelagh Gallagher and will begin with Colorado students—with the strong hope and expectation that it will soon expand to other states across the country.</p>
         
         <p>This milestone didn't happen by chance. It is a direct result of the NGTSAB's November meeting with the NAGC Board of Directors at NAGC25, where NGTSAB founders Carter FitzGerald, Caleb Olson, and Abigail Riead advocated for deeper, more authentic student involvement in national gifted education policy. During those discussions, the NGTSAB highlighted that NAGC's past attempts to involve students had often been short‑lived or ineffective, not because of lack of desire, but because no structured channel existed for meaningful student engagement.</p>
@@ -149,7 +142,6 @@ const posts: Record<string, BlogPost> = {
         
         <p>NGTSAB is immensely proud of this development. While currently only in Colorado, it represents not only the success of our advocacy, but the beginning of a long-overdue cultural shift within the nation's leading gifted education organization. Student voices are powerful, and when given a platform, they can fundamentally transform how educational systems operate.</p>
       </>
-    ),
   },
   "ngtsab-nagc25": {
     title: "First Student Presenters in NAGC's 70-Year History: NGTSAB at NAGC25",
@@ -157,14 +149,9 @@ const posts: Record<string, BlogPost> = {
     date: "November 15, 2025",
     category: "Success Stories",
     author: "Caleb Olson",
-    content: (
-      <>
+    content: <>
         <div className="my-8">
-          <img 
-            src={nagc25TeamImg} 
-            alt="NGTSAB founders at NAGC25" 
-            className="w-full rounded-lg shadow-lg object-cover max-h-96"
-          />
+          <img src={nagc25TeamImg} alt="NGTSAB founders at NAGC25" className="w-full rounded-lg shadow-lg object-cover max-h-96" />
         </div>
         
         <p>At the 2025 National Association for Gifted Children annual conference (NAGC25), an extraordinary milestone was achieved: for the first time in the conference's 70-year history, students were featured as concurrent session presenters. NGTSAB founders Caleb Olson, Carter FitzGerald, and Abigail Riead proudly served as the inaugural student presenters, marking a transformational moment for student involvement in national gifted education dialogue.</p>
@@ -172,21 +159,13 @@ const posts: Record<string, BlogPost> = {
         <p>Their session, titled "Do Our Worlds Align? Bridging the Gap Between Student and Teacher Perceptions of Gifted Learners," presented original research conducted across multiple Colorado school districts. Hundreds of students and teachers participated, offering insight into similarities and differences between the support gifted students want and the support teachers believe they are providing.</p>
         
         <div className="my-8">
-          <img 
-            src={nagc25PresentationImg} 
-            alt="NGTSAB presentation at NAGC25" 
-            className="w-full rounded-lg shadow-lg object-cover max-h-96"
-          />
+          <img src={nagc25PresentationImg} alt="NGTSAB presentation at NAGC25" className="w-full rounded-lg shadow-lg object-cover max-h-96" />
         </div>
         
         <p>Their findings revealed substantial disconnects in areas such as academic challenge, emotional support, workload expectations, and communication. Their presentation also offered strategies to improve gifted instruction—including building stronger teacher-student partnerships, expanding access to advanced coursework, and improving identification and support services.</p>
         
         <div className="my-8">
-          <img 
-            src={nagc25SessionImg} 
-            alt="NGTSAB session audience at NAGC25" 
-            className="w-full rounded-lg shadow-lg object-cover max-h-96"
-          />
+          <img src={nagc25SessionImg} alt="NGTSAB session audience at NAGC25" className="w-full rounded-lg shadow-lg object-cover max-h-96" />
         </div>
         
         <p>Beyond presenting, the founders had the invaluable opportunity to attend sessions led by some of the nation's foremost experts in gifted education. They engaged in discussions with leading researchers and advocates including:</p>
@@ -205,20 +184,15 @@ const posts: Record<string, BlogPost> = {
         <p>NGTSAB hopes that this landmark moment will pave the way for continued student involvement at NAGC events, opening doors for gifted learners across the nation to engage meaningfully in shaping their own educational landscape.</p>
         
         <div className="my-8">
-          <img 
-            src={nagc25GroupImg} 
-            alt="NGTSAB group photo at NAGC25" 
-            className="w-full rounded-lg shadow-lg object-cover max-h-96"
-          />
+          <img src={nagc25GroupImg} alt="NGTSAB group photo at NAGC25" className="w-full rounded-lg shadow-lg object-cover max-h-96" />
         </div>
-      </>
-    ),
+      </>,
     embed: {
       type: "google-slides",
       src: "https://docs.google.com/presentation/d/e/2PACX-1vTpGH1L-8HHBRWd7txdiNBGkosbnFJhKb_yBsbyuu3I-HN-VZSs2ha5JddPnIaiyA/pubembed?start=false&loop=false&delayms=3000",
       title: "Do Our Worlds Align? Presentation Slides",
-      link: "https://docs.google.com/presentation/d/1Q3L5KI5bR7wKN-Ikill1mqiB4gPYoqNd/edit?usp=sharing",
-    },
+      link: "https://docs.google.com/presentation/d/1Q3L5KI5bR7wKN-Ikill1mqiB4gPYoqNd/edit?usp=sharing"
+    }
   },
   "students-present-cagt": {
     title: "Students Present at CAGT",
@@ -226,8 +200,7 @@ const posts: Record<string, BlogPost> = {
     date: "October 21, 2025",
     category: "Success Stories",
     author: "Caleb Olson",
-    content: (
-      <>
+    content: <>
         <p>This past weekend, NGTSAB student leaders Abigail Riead, Caleb Olson, and Carter FitzGerald had the honor of presenting at the Colorado Association for the Gifted and Talented (CAGT) Conference, one of Colorado's most important gatherings of gifted educators, coordinators, and advocates. Their session, titled "From Delay to Drive: Empowering Gifted Minds Through the Procrastination Paradox," was one of the only student‑led presentations at the entire conference—making their contribution particularly meaningful.</p>
         
         <p>Their presentation explored a critical and often misunderstood phenomenon: why gifted students tend to struggle disproportionately with procrastination. They described how the asynchronous development of executive functioning—paired with perfectionism, heightened sensitivity, and the pressure to achieve—creates unique procrastination patterns among gifted learners. Importantly, they reframed procrastination not as a moral failing, but as a neurological and behavioral dynamic that, when understood correctly, can become a source of strength.</p>
@@ -245,14 +218,13 @@ const posts: Record<string, BlogPost> = {
         <p>Their insights resonated deeply with educators in attendance, many of whom expressed gratitude for finally hearing the student perspective on an issue teachers observe but rarely understand from the inside.</p>
         
         <p>This CAGT presentation marks another milestone in increasing student voice at professional gifted‑education conferences. We are incredibly proud of Abigail, Caleb, and Carter for their leadership and expertise.</p>
-      </>
-    ),
+      </>,
     embed: {
       type: "google-slides",
       src: "https://docs.google.com/presentation/d/e/2PACX-1vSiWALUMpmg0hF5CKYEqPgwFpgUV2NMGwVtaZA06a5Gc6QhNNywH5wVlyRIFrWudgYlrWrwWjOhight/pubembed?start=false&loop=false&delayms=10000",
       title: "From Delay to Drive: The Procrastination Paradox",
-      link: "https://docs.google.com/presentation/d/1_GBV4d-p12DS2R3BKnQy-PfjOBRX9aLMl9UonwFttBE/edit?usp=sharing",
-    },
+      link: "https://docs.google.com/presentation/d/1_GBV4d-p12DS2R3BKnQy-PfjOBRX9aLMl9UonwFttBE/edit?usp=sharing"
+    }
   },
   "recruiting-state-reps": {
     title: "We're Recruiting: Become an NGTSAB State Representative",
@@ -260,8 +232,7 @@ const posts: Record<string, BlogPost> = {
     date: "October 8, 2025",
     category: "GT Boards",
     author: "Abigail Riead",
-    content: (
-      <>
+    content: <>
         <p>The National Gifted and Talented Student Advocacy Board (NGTSAB) is excited to announce that we are officially recruiting new state representatives from across the country! As our work expands nationally, we are committed to ensuring that gifted students from every state have a voice—one that is informed, empowered, and represented at the highest levels of advocacy.</p>
         
         <p>State representatives play a pivotal role in the growth of NGTSAB. They serve as the link between the national board and the gifted students, families, and educators in their home states. By gathering local perspectives, identifying barriers, and highlighting regional successes, representatives help ensure that gifted education advocacy reflects the diverse needs of learners nationwide.</p>
@@ -273,21 +244,16 @@ const posts: Record<string, BlogPost> = {
         <p>NGTSAB believes deeply that student advocacy drives meaningful change. If you are a passionate gifted learner ready to lead, collaborate, and represent gifted students in your state, we would love to have you on board. Whether you have years of advocacy experience or are just beginning to explore the world of educational policy, your voice matters—and your state needs it.</p>
         
         <div className="my-8">
-          <img 
-            src={recruitingImg} 
-            alt="NGTSAB State Representative Recruitment" 
-            className="w-full rounded-lg shadow-lg object-cover max-h-96"
-          />
+          <img src={recruitingImg} alt="NGTSAB State Representative Recruitment" className="w-full rounded-lg shadow-lg object-cover max-h-96" />
         </div>
         
         <p>Applications are open now! Together, we can elevate gifted education across the country—one state at a time.</p>
-      </>
-    ),
+      </>,
     cta: {
       text: "Apply Now",
       link: "/apply",
-      internal: true,
-    },
+      internal: true
+    }
   },
   "how-to-testify": {
     title: "How to Testify for Legislation: A Guide for Students",
@@ -295,8 +261,7 @@ const posts: Record<string, BlogPost> = {
     date: "September 2, 2025",
     category: "Legislation",
     author: "Carter FitzGerald",
-    content: (
-      <>
+    content: <>
         <p>One of the most impactful ways students can advocate for gifted education is by participating in the legislative process. Whether at the local, state, or federal level, lawmakers value authentic perspectives—and student voices carry unique credibility. This guide will walk you through the main pathways for engaging with legislators and education leaders.</p>
         
         <h3>1. Written Testimony</h3>
@@ -376,7 +341,6 @@ const posts: Record<string, BlogPost> = {
         
         <p>If you have questions about testifying or want support preparing testimony, reach out to NGTSAB at <a href="mailto:connect@ngtsab.org" className="text-primary hover:underline">connect@ngtsab.org</a>. We're here to help.</p>
       </>
-    ),
   },
   "sponsoring-gt-board-educators": {
     title: "Sponsoring a GT Board: A Guide for Educators",
@@ -384,8 +348,7 @@ const posts: Record<string, BlogPost> = {
     date: "August 7, 2025",
     category: "Resources",
     author: "Abigail Riead",
-    content: (
-      <>
+    content: <>
         <p>Gifted students thrive when their voices are heard, and one of the most effective ways to uplift those voices is by supporting student-led GT Boards. Educators play a crucial role in helping these boards form, grow, and sustain their work—without overshadowing student leadership.</p>
         
         <p>Here's how teachers, counselors, GT coordinators, and administrators can support GT Boards effectively.</p>
@@ -468,13 +431,12 @@ const posts: Record<string, BlogPost> = {
         <p>Display their projects, share their wins with administration, and let them know their efforts matter. Student advocacy flourishes when students feel valued.</p>
         
         <p>When educators sponsor GT Boards effectively, they empower students to transform their schools.</p>
-      </>
-    ),
+      </>,
     cta: {
       text: "View Resources for Teachers",
       link: "/resources/teachers",
-      internal: true,
-    },
+      internal: true
+    }
   },
   "gt-board-handbook-guide": {
     title: "How to Use the GT Board Startup Handbook: A Guide for Students",
@@ -482,8 +444,7 @@ const posts: Record<string, BlogPost> = {
     date: "August 6, 2025",
     category: "Resources",
     author: "Abigail Riead",
-    content: (
-      <>
+    content: <>
         <p>Starting a GT Board—whether at the school, district, or state level—can feel overwhelming at first, but the GT Board Startup Handbook is designed to make the process clear, approachable, and flexible.</p>
         
         <p>Here's how to interpret and use the handbook effectively.</p>
@@ -560,13 +521,12 @@ const posts: Record<string, BlogPost> = {
         <p>Starting a GT Board is meaningful work, and many adults will be excited to help.</p>
         
         <p>You don't have to be an expert to make an impact.</p>
-      </>
-    ),
+      </>,
     cta: {
       text: "Learn How to Start a GT Board",
       link: "/resources/start-board",
-      internal: true,
-    },
+      internal: true
+    }
   },
   "auto-enrollment-review": {
     title: "A Review of Automatic Enrollment Across the Nation",
@@ -574,8 +534,7 @@ const posts: Record<string, BlogPost> = {
     date: "July 18, 2025",
     category: "Legislation",
     author: "Ann Mary Thomas",
-    content: (
-      <>
+    content: <>
         <p>Automatic enrollment policies share a simple premise: students who show evidence of advanced academic performance are automatically placed into advanced courses the following school year. While Colorado is exploring this policy now, many other states have already implemented formal statewide versions—each offering valuable lessons.</p>
         
         <h3>North Carolina</h3>
@@ -607,7 +566,6 @@ const posts: Record<string, BlogPost> = {
         
         <p>States like Florida, California, New York, and Michigan also demonstrate why these policies are needed: research documents substantial disparities in advanced course participation for Black, Hispanic, and low‑income students. Automatic enrollment is one of the few interventions proven to change these patterns at scale.</p>
       </>
-    ),
   },
   "importance-auto-enrollment": {
     title: "The Importance of Automatic Enrollment",
@@ -615,8 +573,7 @@ const posts: Record<string, BlogPost> = {
     date: "June 4, 2025",
     category: "Legislation",
     author: "Carter FitzGerald",
-    content: (
-      <>
+    content: <>
         <p>Automatic enrollment—also known as opt‑out placement—is a simple but powerful policy that ensures students who demonstrate readiness for advanced coursework are automatically placed into higher‑level classes the following year. The mechanism is straightforward: if a student performs at an advanced level on state standardized tests or other objective academic measures, they are automatically enrolled in an advanced course unless their family chooses to opt out. This eliminates unnecessary barriers and replaces inconsistent, biased teacher‑referral systems with objective, research‑supported criteria.</p>
         
         <h3>Why Automatic Enrollment Is Needed</h3>
@@ -632,14 +589,13 @@ const posts: Record<string, BlogPost> = {
         <p>Because automatic enrollment removes subjective criteria, it dramatically expands access for underserved students. States implementing these policies, such as North Carolina, Texas, and Washington, have reported significant increases in enrollment for students of color and low‑income students, with these students staying in advanced coursework at higher rates. Auto‑enrollment ensures students who earn advanced scores are recognized and supported, reducing long‑standing inequities and strengthening academic pipelines for high‑ability learners.</p>
         
         <p>Automatic enrollment is not just good policy—it is common sense. It aligns opportunity with demonstrated readiness, simplifies school processes, and opens doors for students who have historically been overlooked. As more states adopt these policies, the potential for equity‑driven educational transformation grows stronger.</p>
-      </>
-    ),
+      </>,
     embed: {
       type: "google-doc",
       src: "https://docs.google.com/document/d/e/2PACX-1vTil9PNP7kpVgpnZ4iFGEfRMAtaiOrEm5P-JB-voMf9vaZ8rQd9DuKviezZC_fpKx57HfVFR31reEzu/pub?embedded=true",
       title: "Colorado Automatic Enrollment One-Pager",
-      link: "https://docs.google.com/document/d/11iCl_RaRfsY4WWf7rgzlJh0Y8bd_3sK2vT_Zo6lQtPg/edit?usp=sharing",
-    },
+      link: "https://docs.google.com/document/d/11iCl_RaRfsY4WWf7rgzlJh0Y8bd_3sK2vT_Zo6lQtPg/edit?usp=sharing"
+    }
   },
   "javits-testimony": {
     title: "NGTSAB Javits Testimony",
@@ -647,8 +603,7 @@ const posts: Record<string, BlogPost> = {
     date: "February 12, 2025",
     category: "Legislation",
     author: "Carter FitzGerald",
-    content: (
-      <>
+    content: <>
         <p>In early 2025, the National Gifted and Talented Student Advocacy Board (NGTSAB) submitted written testimony to the U.S. Senate in defense of the Jacob K. Javits Gifted and Talented Students Education Program—commonly known as the Javits Program, the only federally supported program dedicated specifically to gifted education. When Congress began considering eliminating the program, NGTSAB acted quickly. Their testimony highlighted the urgent need to protect national research, equity initiatives, and innovation in gifted education.</p>
         
         <p>The Javits Program holds a uniquely important place in the educational ecosystem. Its mission is to support evidence‑based research, demonstration projects, and innovative strategies that help schools across the country identify and serve gifted and talented learners, with a specific emphasis on students who have been historically underrepresented in gifted programs—such as economically disadvantaged students, English language learners, and students with disabilities. These efforts are essential because national research shows that high‑ability students from minority and low‑income backgrounds are significantly less likely to be identified for gifted services despite performing at levels comparable to their peers.</p>
@@ -662,14 +617,13 @@ const posts: Record<string, BlogPost> = {
         <p>NGTSAB's action demonstrated that real change happens when students speak up. Policymakers routinely consider student testimonies when evaluating the effectiveness and direction of educational programs. When students articulate what they need, it reframes the conversation from abstract policy to real lives—reminding leaders that gifted learners exist in every community and deserve to be supported equitably.</p>
         
         <p>Through their Javits testimony, NGTSAB not only defended a critical federal program but modeled exactly what student advocacy should look like: informed, proactive, collaborative, and centered on equity. Their work stands as a call to action for gifted students nationwide—speak up, get involved, and use your voice to protect and improve the programs meant to help you thrive.</p>
-      </>
-    ),
+      </>,
     embed: {
       type: "google-drive-pdf",
       src: "https://drive.google.com/file/d/1c3plQOtRSy1_gpkpFIHE6B4hkorQR7aH/preview",
       title: "NGTSAB's Javits Testimony Document",
-      link: "https://drive.google.com/file/d/1c3plQOtRSy1_gpkpFIHE6B4hkorQR7aH/view?usp=sharing",
-    },
+      link: "https://drive.google.com/file/d/1c3plQOtRSy1_gpkpFIHE6B4hkorQR7aH/view?usp=sharing"
+    }
   },
   "about-ngtsab": {
     title: "About the National Gifted and Talented Student Advocacy Board (NGTSAB)",
@@ -677,14 +631,9 @@ const posts: Record<string, BlogPost> = {
     date: "December 19, 2024",
     category: "GT Boards",
     author: "Carter FitzGerald",
-    content: (
-      <>
+    content: <>
         <div className="my-8">
-          <img 
-            src={aboutFoundersImg} 
-            alt="NGTSAB founders" 
-            className="w-full rounded-lg shadow-lg object-cover max-h-96"
-          />
+          <img src={aboutFoundersImg} alt="NGTSAB founders" className="w-full rounded-lg shadow-lg object-cover max-h-96" />
         </div>
         
         <p>The National Gifted and Talented Student Advocacy Board (NGTSAB) was founded by three Colorado students—Carter FitzGerald, Caleb Olson, and Abigail Riead—after recognizing both the strengths and the shortcomings of their district's gifted program. Despite participating in a supportive and active GT Student Board, they discovered that such student-led bodies are incredibly rare nationwide. In fact, there was no national organization led by students to represent the needs, experiences, or perspectives of gifted learners across the country, so they created one.</p>
@@ -700,33 +649,34 @@ const posts: Record<string, BlogPost> = {
         <p>What makes NGTSAB powerful is its belief that students don't need permission to lead change—they simply need a platform. When students articulate the need for equitable identification, culturally responsive assessment, expanded programming, mental health support, or academic challenge, policymakers listen. And as NGTSAB's founders discovered, once students begin speaking up, the system begins responding.</p>
         
         <p>By forming the first national, student-led advocacy board for gifted learners, NGTSAB aims to reshape how gifted education is discussed in America. Their mission is to ensure that every gifted student—regardless of background, zip code, or circumstance—can access the opportunities they deserve. In doing so, they serve as a model of what student leadership should be: bold, informed, equitable, and deeply committed to helping all advanced learners reach their full potential.</p>
-      </>
-    ),
+      </>,
     cta: {
       text: "Join NGTSAB - Apply Now",
       link: "/apply",
-      internal: true,
-    },
-  },
+      internal: true
+    }
+  }
 };
-
 interface Comment {
   id: number;
   author: string;
   date: string;
   content: string;
 }
-
 const initialComments: Record<string, Comment[]> = {};
-
 export default function BlogPost() {
-  const { id } = useParams<{ id: string }>();
+  const {
+    id
+  } = useParams<{
+    id: string;
+  }>();
   const [comments, setComments] = useState<Comment[]>(id ? initialComments[id] || [] : []);
-  const [newComment, setNewComment] = useState({ author: "", content: "" });
-
+  const [newComment, setNewComment] = useState({
+    author: "",
+    content: ""
+  });
   if (!id || !posts[id]) {
-    return (
-      <Layout>
+    return <Layout>
         <div className="container py-20 text-center">
           <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
           <p className="text-muted-foreground mb-8">The blog post you're looking for doesn't exist.</p>
@@ -736,28 +686,30 @@ export default function BlogPost() {
             </Link>
           </Button>
         </div>
-      </Layout>
-    );
+      </Layout>;
   }
-
   const post = posts[id];
-
   const handleSubmitComment = (e: React.FormEvent) => {
     e.preventDefault();
     if (newComment.author.trim() && newComment.content.trim()) {
       const comment: Comment = {
         id: Date.now(),
         author: newComment.author,
-        date: new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }),
-        content: newComment.content,
+        date: new Date().toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        }),
+        content: newComment.content
       };
       setComments([...comments, comment]);
-      setNewComment({ author: "", content: "" });
+      setNewComment({
+        author: "",
+        content: ""
+      });
     }
   };
-
-  return (
-    <Layout>
+  return <Layout>
       {/* Header */}
       <section className="bg-hero-gradient text-primary-foreground py-16">
         <div className="container max-w-4xl">
@@ -789,28 +741,18 @@ export default function BlogPost() {
           </article>
 
           {/* Embedded Document */}
-          {post.embed && (
-            <div className="mt-12">
+          {post.embed && <div className="mt-12">
               <Separator className="mb-8" />
               <Card className="shadow-card">
                 <CardHeader>
                   <div className="flex items-center gap-2">
-                    {post.embed.type === "google-slides" ? (
-                      <Presentation className="h-5 w-5 text-primary" />
-                    ) : (
-                      <FileText className="h-5 w-5 text-primary" />
-                    )}
+                    {post.embed.type === "google-slides" ? <Presentation className="h-5 w-5 text-primary" /> : <FileText className="h-5 w-5 text-primary" />}
                     <h3 className="text-lg font-semibold">{post.embed.title}</h3>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <div className="aspect-video w-full rounded-lg overflow-hidden bg-muted">
-                    <iframe
-                      src={post.embed.src}
-                      className="w-full h-full"
-                      allowFullScreen
-                      title={post.embed.title}
-                    />
+                    <iframe src={post.embed.src} className="w-full h-full" allowFullScreen title={post.embed.title} />
                   </div>
                   <div className="mt-4 flex gap-3">
                     <Button asChild variant="outline" size="sm">
@@ -821,30 +763,23 @@ export default function BlogPost() {
                   </div>
                 </CardContent>
               </Card>
-            </div>
-          )}
+            </div>}
 
           {/* Call to Action */}
-          {post.cta && (
-            <div className="mt-12">
+          {post.cta && <div className="mt-12">
               <Card className="bg-primary/5 border-primary/20">
                 <CardContent className="py-8 text-center">
                   <h3 className="text-xl font-semibold mb-4">Ready to Take Action?</h3>
-                  {post.cta.internal ? (
-                    <Button asChild size="lg">
+                  {post.cta.internal ? <Button asChild size="lg">
                       <Link to={post.cta.link}>{post.cta.text}</Link>
-                    </Button>
-                  ) : (
-                    <Button asChild size="lg">
+                    </Button> : <Button asChild size="lg">
                       <a href={post.cta.link} target="_blank" rel="noopener noreferrer">
                         {post.cta.text} <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
-                    </Button>
-                  )}
+                    </Button>}
                 </CardContent>
               </Card>
-            </div>
-          )}
+            </div>}
 
           {/* Comments Section */}
           <div className="mt-12">
@@ -862,21 +797,16 @@ export default function BlogPost() {
               <CardContent>
                 <form onSubmit={handleSubmitComment} className="space-y-4">
                   <div>
-                    <Input
-                      placeholder="Your name"
-                      value={newComment.author}
-                      onChange={(e) => setNewComment({ ...newComment, author: e.target.value })}
-                      required
-                    />
+                    <Input placeholder="Your name" value={newComment.author} onChange={e => setNewComment({
+                    ...newComment,
+                    author: e.target.value
+                  })} required />
                   </div>
                   <div>
-                    <Textarea
-                      placeholder="Share your thoughts..."
-                      value={newComment.content}
-                      onChange={(e) => setNewComment({ ...newComment, content: e.target.value })}
-                      required
-                      rows={4}
-                    />
+                    <Textarea placeholder="Share your thoughts..." value={newComment.content} onChange={e => setNewComment({
+                    ...newComment,
+                    content: e.target.value
+                  })} required rows={4} />
                   </div>
                   <Button type="submit">Post Comment</Button>
                 </form>
@@ -885,11 +815,7 @@ export default function BlogPost() {
 
             {/* Comments List */}
             <div className="space-y-4">
-              {comments.length === 0 ? (
-                <p className="text-muted-foreground text-center py-8">No comments yet. Be the first to share your thoughts!</p>
-              ) : (
-                comments.map((comment) => (
-                  <Card key={comment.id} className="shadow-card">
+              {comments.length === 0 ? <p className="text-muted-foreground text-center py-8">No comments yet. Be the first to share your thoughts!</p> : comments.map(comment => <Card key={comment.id} className="shadow-card">
                     <CardContent className="pt-6">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="font-medium">{comment.author}</span>
@@ -897,13 +823,10 @@ export default function BlogPost() {
                       </div>
                       <p className="text-foreground">{comment.content}</p>
                     </CardContent>
-                  </Card>
-                ))
-              )}
+                  </Card>)}
             </div>
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 }
