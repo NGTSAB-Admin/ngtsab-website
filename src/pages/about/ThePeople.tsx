@@ -223,10 +223,16 @@ export default function ThePeople() {
 
       <section className="py-16 bg-muted">
         <div className="container text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Join Our Team</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Become a State Representative</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-            We're always looking for passionate students to join our leadership team. Check out our open positions and apply today.
+            We're looking for passionate students to represent their state and advocate for gifted education. 
+            Join our team and make a difference in your community.
           </p>
+          <Link to="/apply">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              Apply Now
+            </Button>
+          </Link>
         </div>
       </section>
     </Layout>
