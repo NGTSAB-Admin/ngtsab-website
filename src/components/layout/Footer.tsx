@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Linkedin, Instagram } from "lucide-react";
+import ngtsabLogo from "@/assets/NGTSAB.png";
 
 export function Footer() {
   return (
@@ -7,7 +8,10 @@ export function Footer() {
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="font-serif text-xl font-bold">NGTSAB</h3>
+            <div className="flex items-center space-x-2">
+              <img src={ngtsabLogo} alt="NGTSAB Logo" className="h-10 w-10 object-contain brightness-0 invert" />
+              <h3 className="font-serif text-xl font-bold">NGTSAB</h3>
+            </div>
             <p className="text-sm text-primary-foreground/80">
               The National Gifted and Talented Student Advocacy Board empowers student voices to improve gifted education nationwide.
             </p>

@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import ngtsabLogo from "@/assets/NGTSAB.png";
 const aboutLinks = [{
   title: "About Us",
   href: "/about",
@@ -56,6 +57,7 @@ export function Header() {
   return <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
+          <img src={ngtsabLogo} alt="NGTSAB Logo" className="h-10 w-10 object-contain mix-blend-multiply" />
           <span className="text-xl font-bold text-primary font-sans">NGTSAB</span>
         </Link>
 
