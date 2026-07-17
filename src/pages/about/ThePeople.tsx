@@ -5,50 +5,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { MapPin, Mail, ExternalLink, ChevronDown } from "lucide-react";
-
-import carterPhoto from "@/assets/carter-fitzgerald.jpg";
-import abigailPhoto from "@/assets/abigail-riead.jpg";
-import calebPhoto from "@/assets/caleb-olson.jpg";
-import annMaryPhoto from "@/assets/ann-mary-thomas.jpg";
-import haleyPhoto from "@/assets/haley-becker.jpg";
-
-const leadership = [
-  { name: "Carter FitzGerald", role: "President", initials: "CF", photo: carterPhoto, bio: "Carter leads our national advocacy efforts and strategic direction. He oversees organizational operations and represents NGTSAB at national conferences.", slug: "carter-fitzgerald", location: "Highlands Ranch, CO" },
-  { name: "Abigail Riead", role: "Vice President", initials: "AR", photo: abigailPhoto, bio: "Abigail coordinates state-level initiatives and board development programs. She manages outreach efforts and supports strategic planning.", slug: "abigail-riead", location: "Highlands Ranch, CO" },
-  { name: "Caleb Olson", role: "Vice President", initials: "CO", photo: calebPhoto, bio: "Caleb coordinates state-level initiatives and board development programs. He focuses on building partnerships and expanding our network.", slug: "caleb-olson", location: "Highlands Ranch, CO" },
-  { name: "Ann Mary Thomas", role: "Executive Board Member", initials: "AT", photo: annMaryPhoto, bio: "Ann Mary contributes to organizational strategy and student advocacy initiatives. She serves as North Carolina State Representative.", slug: "ann-mary-thomas", location: "Cary, NC" },
-  { name: "Haley Becker", role: "Executive Board Member", initials: "HB", photo: haleyPhoto, bio: "Haley contributes to organizational strategy and student advocacy initiatives. She serves as Texas State Representative.", slug: "haley-becker", location: "Houston, TX" },
-];
-
-interface StateRep {
-  name: string;
-  initials: string;
-  city: string;
-  state: string;
-  bio: string;
-  email?: string;
-  isExecutive?: boolean;
-  slug?: string;
-}
-
-const stateRepresentatives: StateRep[] = [
-  { name: "Megan Brooks", initials: "MB", city: "Mesa", state: "Arizona", bio: "Advocating for gifted education initiatives in Arizona.", email: "mbrook26@asu.edu" },
-  { name: "Wensen Fang", initials: "WF", city: "Boulder", state: "Colorado", bio: "Working to expand gifted programs across Colorado schools.", email: "wfang01@bvsd.org" },
-  { name: "Violet Sandridge", initials: "VS", city: "Boulder", state: "Colorado", bio: "Promoting student voice in Colorado's gifted education policy.", email: "vjsandridge01@bvsd.org" },
-  { name: "Ann Mary Thomas", initials: "AT", city: "Cary", state: "North Carolina", bio: "Executive Board Member and North Carolina State Representative. Ann Mary contributes to organizational strategy and student advocacy initiatives.", isExecutive: true, slug: "ann-mary-thomas", email: "annmary0828@gmail.com" },
-  { name: "Haley Becker", initials: "HB", city: "Houston", state: "Texas", bio: "Executive Board Member and Texas State Representative. Haley contributes to organizational strategy and student advocacy initiatives.", isExecutive: true, slug: "haley-becker", email: "beckerhaleymarie@gmail.com" },
-];
-
-const allStates = [
-  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
-  "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
-  "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri",
-  "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
-  "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
-  "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington",
-  "West Virginia", "Wisconsin", "Wyoming"
-];
+import { MapPin, Mail, ExternalLink, ChevronDown, GraduationCap } from "lucide-react";
+import { executiveBoard, alumni, stateRepresentatives, allStates, StateRep } from "@/data/people";
 
 const getRepsByState = () => {
   const repsByState: Record<string, StateRep[]> = {};
@@ -150,7 +108,7 @@ export default function ThePeople() {
         <div className="container">
           <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Executive Board</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {leadership.map((person) => (
+            {executiveBoard.map((person) => (
               <Link key={person.name} to={`/about/people/${person.slug}`}>
                 <Card className="shadow-card hover:shadow-hover transition-shadow text-center h-full cursor-pointer">
                   <CardHeader>
@@ -174,6 +132,42 @@ export default function ThePeople() {
               </Link>
             ))}
           </div>
+
+          {/* Alumni Section (collapsible, compact) */}
+          <Collapsible defaultOpen={false} className="mb-16">
+            <Card className="shadow-card overflow-hidden">
+              <CollapsibleTrigger className="w-full p-4 flex items-center justify-between hover:bg-muted/50 transition-colors group">
+                <div className="flex items-center gap-3">
+                  <GraduationCap className="h-6 w-6 text-primary" />
+                  <h2 className="font-serif text-2xl font-bold text-foreground">Alumni</h2>
+                  <span className="text-sm text-muted-foreground">({alumni.length})</span>
+                </div>
+                <ChevronDown className="h-5 w-5 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                <CardContent className="pt-2 pb-6">
+                  <p className="text-sm text-muted-foreground mb-6 max-w-3xl">
+                    Honoring the past leaders who built NGTSAB into what it is today.
+                  </p>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    {alumni.map((person) => (
+                      <Link key={person.slug} to={`/about/people/${person.slug}`}>
+                        <div className="flex flex-col items-center text-center p-3 rounded-lg hover:bg-muted transition-colors cursor-pointer">
+                          <Avatar className="h-16 w-16 mb-2">
+                            <AvatarImage src={person.photo} alt={person.name} className="object-cover" />
+                            <AvatarFallback className="bg-secondary text-secondary-foreground text-sm">
+                              {person.initials}
+                            </AvatarFallback>
+                          </Avatar>
+                          <p className="text-sm font-medium leading-tight">{person.name}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </CardContent>
+              </CollapsibleContent>
+            </Card>
+          </Collapsible>
 
           <h2 className="font-serif text-3xl font-bold text-foreground mb-4">State Representatives</h2>
           <p className="text-muted-foreground max-w-3xl mb-8">
