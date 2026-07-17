@@ -3,70 +3,13 @@ import { Layout } from "@/components/layout/Layout";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Mail, MapPin } from "lucide-react";
-
-import carterPhoto from "@/assets/carter-fitzgerald.jpg";
-import abigailPhoto from "@/assets/abigail-riead.jpg";
-import calebPhoto from "@/assets/caleb-olson.jpg";
-import annMaryPhoto from "@/assets/ann-mary-thomas.jpg";
-import haleyPhoto from "@/assets/haley-becker.jpg";
-
-const people = {
-  "carter-fitzgerald": {
-    name: "Carter FitzGerald",
-    role: "President",
-    initials: "CF",
-    photo: carterPhoto,
-    location: "Highlands Ranch, Colorado",
-    duties: "President and Co-Founder of the NGTSAB. Contact if interested in joining our efforts.",
-    biography: "Carter FitzGerald has been a passionate advocate for gifted education since middle school. As a student in Colorado's gifted program, Carter experienced firsthand both the benefits and challenges of gifted education. This experience inspired a commitment to ensuring all gifted students have access to appropriate educational opportunities. Carter has led an advocacy campaign for Automatic Enrollment in Colorado and has spoken at state and national education conferences about the importance of student voice in educational policy.",
-    email: "cfitzgerald@ngtsab.org",
-  },
-  "abigail-riead": {
-    name: "Abigail Riead",
-    role: "Vice President",
-    initials: "AR",
-    photo: abigailPhoto,
-    location: "Highlands Ranch, Colorado",
-    duties: "Coordinating state-level initiatives, overseeing board development programs, supporting the President in strategic planning, and managing inter-state communication between affiliate boards.",
-    biography: "Based in Colorado, Abby has been instrumental in developing resources for students looking to start their own advocacy boards. Her work focuses on building sustainable structures that empower student voices in gifted education policy discussions at both state and national levels.",
-    email: "ariead@ngtsab.org",
-  },
-  "caleb-olson": {
-    name: "Caleb Olson",
-    role: "Vice President",
-    initials: "CO",
-    photo: calebPhoto,
-    location: "Highlands Ranch, Colorado",
-    duties: "Coordinating state-level initiatives, leading legislative advocacy efforts, developing partnerships with education organizations, and supporting board member recruitment and training.",
-    biography: "Caleb Olson serves as Vice President, bringing a unique perspective to gifted education advocacy. Caleb has been particularly focused on automatic enrollment legislation and has worked closely with state legislators to promote equitable access to gifted programs. His analytical approach and dedication to data-driven advocacy have strengthened NGTSAB's policy positions.",
-    email: "colson@ngtsab.org",
-  },
-  "ann-mary-thomas": {
-    name: "Ann Mary Thomas",
-    role: "Executive Board Member",
-    initials: "AT",
-    photo: annMaryPhoto,
-    location: "Cary, North Carolina",
-    duties: "Policy expert.",
-    biography: "High school senior. Passionate about educational opportunity.",
-    email: "annmary0828@gmail.com",
-  },
-  "haley-becker": {
-    name: "Haley Becker",
-    role: "Executive Board Member",
-    initials: "HB",
-    photo: haleyPhoto,
-    location: "Houston, Texas",
-    duties: "Contributing to organizational strategy, serving as Texas State Representative, managing communications and social media presence, and developing content for student resources.",
-    biography: "Haley Becker serves as an Executive Board Member and Texas State Representative, bringing creativity and communication expertise to NGTSAB. Haley has been instrumental in expanding the organization's digital presence and connecting with students nationwide. Haley's focus on storytelling and community building has helped amplify student voices and share success stories from gifted programs across the country.",
-    email: "beckerhaleymarie@gmail.com",
-  },
-};
+import { ArrowLeft, Mail, MapPin, GraduationCap } from "lucide-react";
+import { getPersonBySlug, alumni } from "@/data/people";
 
 export default function PersonProfile() {
   const { personId } = useParams<{ personId: string }>();
-  const person = personId ? people[personId as keyof typeof people] : null;
+  const person = personId ? getPersonBySlug(personId) : undefined;
+  const isAlumni = person ? alumni.some((a) => a.slug === person.slug) : false;
 
   if (!person) {
     return (
@@ -98,7 +41,9 @@ export default function PersonProfile() {
             </Avatar>
             <div>
               <h1 className="font-serif text-4xl md:text-5xl font-bold mb-2">{person.name}</h1>
-              <p className="text-xl text-primary-foreground/90 mb-3">{person.role}</p>
+              <p className="text-xl text-primary-foreground/90 mb-3">
+                {isAlumni && person.formerRole ? `Alumni — ${person.formerRole}` : person.role}
+              </p>
               <div className="flex items-center gap-2 text-primary-foreground/80">
                 <MapPin className="h-4 w-4" />
                 <span>{person.location}</span>
@@ -112,23 +57,64 @@ export default function PersonProfile() {
         <div className="container">
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="font-serif">Duties & Responsibilities</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">{person.duties}</p>
-                </CardContent>
-              </Card>
+              {isAlumni ? (
+                <>
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="font-serif flex items-center gap-2">
+                        <GraduationCap className="h-5 w-5 text-primary" />
+                        Previous Role at NGTSAB
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground leading-relaxed">
+                        <span className="font-medium text-foreground">{person.formerRole}</span>
+                        {person.duties ? ` — ${person.duties}` : ""}
+                      </p>
+                    </CardContent>
+                  </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="font-serif">Biography</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">{person.biography}</p>
-                </CardContent>
-              </Card>
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="font-serif">Biography</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground leading-relaxed">{person.biography}</p>
+                    </CardContent>
+                  </Card>
+
+                  {person.currentEndeavors && (
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="font-serif">Currently</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground leading-relaxed">{person.currentEndeavors}</p>
+                      </CardContent>
+                    </Card>
+                  )}
+                </>
+              ) : (
+                <>
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="font-serif">Duties & Responsibilities</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground leading-relaxed">{person.duties}</p>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="font-serif">Biography</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground leading-relaxed">{person.biography}</p>
+                    </CardContent>
+                  </Card>
+                </>
+              )}
             </div>
 
             <div className="space-y-6">
