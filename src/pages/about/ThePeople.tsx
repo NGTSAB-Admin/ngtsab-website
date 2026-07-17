@@ -133,42 +133,6 @@ export default function ThePeople() {
             ))}
           </div>
 
-          {/* Alumni Section (collapsible, compact) */}
-          <Collapsible defaultOpen={false} className="mb-16">
-            <Card className="shadow-card overflow-hidden">
-              <CollapsibleTrigger className="w-full p-4 flex items-center justify-between hover:bg-muted/50 transition-colors group">
-                <div className="flex items-center gap-3">
-                  <GraduationCap className="h-6 w-6 text-primary" />
-                  <h2 className="font-serif text-2xl font-bold text-foreground">Alumni</h2>
-                  <span className="text-sm text-muted-foreground">({alumni.length})</span>
-                </div>
-                <ChevronDown className="h-5 w-5 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <CardContent className="pt-2 pb-6">
-                  <p className="text-sm text-muted-foreground mb-6 max-w-3xl">
-                    Honoring the past leaders who built NGTSAB into what it is today.
-                  </p>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                    {alumni.map((person) => (
-                      <Link key={person.slug} to={`/about/people/${person.slug}`}>
-                        <div className="flex flex-col items-center text-center p-3 rounded-lg hover:bg-muted transition-colors cursor-pointer">
-                          <Avatar className="h-16 w-16 mb-2">
-                            <AvatarImage src={person.photo} alt={person.name} className="object-cover" />
-                            <AvatarFallback className="bg-secondary text-secondary-foreground text-sm">
-                              {person.initials}
-                            </AvatarFallback>
-                          </Avatar>
-                          <p className="text-sm font-medium leading-tight">{person.name}</p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </CardContent>
-              </CollapsibleContent>
-            </Card>
-          </Collapsible>
-
           <h2 className="font-serif text-3xl font-bold text-foreground mb-4">State Representatives</h2>
           <p className="text-muted-foreground max-w-3xl mb-8">
             State Representatives serve as the voice of gifted students in their state. They advocate for policy changes, 
