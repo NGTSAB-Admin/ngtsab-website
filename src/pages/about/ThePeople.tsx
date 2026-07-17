@@ -180,6 +180,43 @@ export default function ThePeople() {
       </section>
 
       <section className="py-16 bg-muted">
+        <div className="container">
+          <Collapsible defaultOpen>
+            <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Alumni</h2>
+            <p className="text-muted-foreground max-w-3xl mb-8">
+              Former Executive Board members and leaders who helped shape NGTSAB. We are grateful for their contributions and continued advocacy.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {alumni.map((person) => (
+                <Link key={person.name} to={`/about/people/${person.slug}`}>
+                  <Card className="shadow-card hover:shadow-hover transition-shadow text-center h-full cursor-pointer">
+                    <CardHeader>
+                      <Avatar className="h-24 w-24 mx-auto mb-4">
+                        <AvatarImage src={person.photo} alt={person.name} className="object-cover" />
+                        <AvatarFallback className="bg-primary text-primary-foreground text-2xl">
+                          {person.initials}
+                        </AvatarFallback>
+                      </Avatar>
+                      <CardTitle>{person.name}</CardTitle>
+                      <CardDescription className="text-primary font-medium">
+                        {person.formerRole}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-center gap-1 text-xs text-muted-foreground">
+                        <MapPin className="h-3 w-3" />
+                        <span>{person.location}</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </Collapsible>
+        </div>
+      </section>
+
+      <section className="py-16 bg-muted/50">
         <div className="container text-center">
           <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Become a State Representative</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
