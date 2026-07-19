@@ -207,4 +207,27 @@ export const allStates = [
 
 // Lookup helpers
 export const getPersonBySlug = (slug: string): Person | undefined =>
-  [...executiveBoard, ...alumni].find((p) => p.slug === slug);
+  [...executiveBoard, ...sponsors, ...alumni].find((p) => p.slug === slug);
+
+// ============================================================
+// SPONSORS
+// ============================================================
+export const sponsors: Person[] = [
+  {
+    slug: "matt-zakreski",
+    name: "Dr. Matt Zakreski, PsyD",
+    initials: "MZ",
+    role: "Sponsor",
+    photo: mattZakreskiPhoto,
+    bio: "Clinical psychologist, author, and internationally recognized advocate for gifted and neurodivergent learners.",
+    biography:
+      "Dr. Matthew Zakreski (affectionately known as \"Dr. Matt\") is a seasoned clinical psychologist and professional speaker renowned for his expertise in serving neurodivergent individuals — people with different brains such as gifted, ADHD, Autism, and dyslexia. He is best known for his work with gifted individuals as an advocate for using accessible understanding of neurodivergent needs to implement high-level supports. Having delivered over 500 talks all over the world, Dr. Matt has cultivated a reputation as a dynamic keynote speaker, captivating audiences with his insightful presentations and empowering messages.\n\nDr. Zakreski holds a PsyD in Clinical Psychology from Widener University, where his research focused on the social and emotional needs of gifted learners and best educational and occupational practices for neurodivergent people. He is the co-founder and Lead Psychologist of The Neurodiversity Collective, an online private practice providing psychotherapy, coaching, consulting, and training to neurodivergent individuals and their families.\n\nHis work appears in peer-reviewed journals and industry periodicals, including Gifted Child Today, Clinical Practice in Pediatric Psychology, and the Journal of Gifted Education and Creativity. His first book, Neurodiversity Playbook: How Neurodivergent People Can Crack the Code of Living in a Neurotypical World, was published in late 2024 and debuted at #1 on Amazon's gifted students education new releases list. Dr. Zakreski is an active member of the National Association for Gifted Children (NAGC), Supporting Emotional Needs of the Gifted (SENG), the New Jersey Association for Gifted Children (NJAGC), and the Pennsylvania Association for Gifted Education (PAGE), and has served on the boards of both state and national organizations for education and mental health.",
+    contribution:
+      "Dr. Matt has worked alongside NGTSAB since its founding in 2025. As a dedicated sponsor, he has helped connect and introduce students from across the country to the organization, championed our student advocates, and supported them at national conferences such as NAGC. His mentorship, expertise, and generosity have been instrumental in growing NGTSAB into a nationwide student movement for gifted education.",
+    links: [
+      { label: "Dr. Matt Zakreski", url: "https://www.drmattzakreski.com" },
+      { label: "The Neurodiversity Collective", url: "https://www.theneurodiversitycollective.com" },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/drmattzakreski" },
+    ],
+  },
+];
