@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { MapPin, Mail, ExternalLink, ChevronDown, GraduationCap } from "lucide-react";
-import { executiveBoard, alumni, stateRepresentatives, allStates, StateRep } from "@/data/people";
+import { executiveBoard, alumni, sponsors, stateRepresentatives, allStates, StateRep } from "@/data/people";
 
 const getRepsByState = () => {
   const repsByState: Record<string, StateRep[]> = {};
@@ -181,6 +181,35 @@ export default function ThePeople() {
 
       <section className="py-16 bg-muted">
         <div className="container">
+          <div className="mb-16">
+            <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Sponsors</h2>
+            <p className="text-muted-foreground max-w-3xl mb-8">
+              Our sponsors are trusted advocates, educators, and professionals who champion NGTSAB's mission and
+              support our students as they lead the movement for gifted education.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {sponsors.map((person) => (
+                <Link key={person.slug} to={`/about/people/${person.slug}`}>
+                  <Card className="shadow-card hover:shadow-hover transition-shadow text-center h-full cursor-pointer">
+                    <CardHeader>
+                      <Avatar className="h-24 w-24 mx-auto mb-4">
+                        <AvatarImage src={person.photo} alt={person.name} className="object-cover" />
+                        <AvatarFallback className="bg-primary text-primary-foreground text-2xl">
+                          {person.initials}
+                        </AvatarFallback>
+                      </Avatar>
+                      <CardTitle>{person.name}</CardTitle>
+                      <CardDescription className="text-primary font-medium">{person.role}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground">{person.bio}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <Collapsible defaultOpen>
             <CollapsibleTrigger className="w-full flex items-center justify-between group mb-4">
               <div className="text-left">
