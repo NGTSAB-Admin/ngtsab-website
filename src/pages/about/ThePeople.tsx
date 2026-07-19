@@ -182,36 +182,76 @@ export default function ThePeople() {
       <section className="py-16 bg-muted">
         <div className="container">
           <Collapsible defaultOpen>
-            <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Alumni</h2>
-            <p className="text-muted-foreground max-w-3xl mb-8">
-              Former Executive Board members and leaders who helped shape NGTSAB. We are grateful for their contributions and continued advocacy.
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {alumni.map((person) => (
-                <Link key={person.name} to={`/about/people/${person.slug}`}>
-                  <Card className="shadow-card hover:shadow-hover transition-shadow text-center h-full cursor-pointer">
-                    <CardHeader>
-                      <Avatar className="h-24 w-24 mx-auto mb-4">
-                        <AvatarImage src={person.photo} alt={person.name} className="object-cover" />
-                        <AvatarFallback className="bg-primary text-primary-foreground text-2xl">
-                          {person.initials}
-                        </AvatarFallback>
-                      </Avatar>
-                      <CardTitle>{person.name}</CardTitle>
-                      <CardDescription className="text-primary font-medium">
-                        {person.formerRole}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex items-center justify-center gap-1 text-xs text-muted-foreground">
-                        <MapPin className="h-3 w-3" />
-                        <span>{person.location}</span>
+            <CollapsibleTrigger className="w-full flex items-center justify-between group mb-4">
+              <div className="text-left">
+                <h2 className="font-serif text-3xl font-bold text-foreground">Alumni</h2>
+                <p className="text-muted-foreground max-w-3xl mt-1">
+                  Former Executive Board members and leaders who helped shape NGTSAB.
+                </p>
+              </div>
+              <ChevronDown className="h-5 w-5 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {alumni.map((person) => (
+                  <Dialog key={person.name}>
+                    <DialogTrigger asChild>
+                      <div className="flex items-center gap-3 p-3 rounded-lg bg-card border shadow-card hover:shadow-hover transition-shadow cursor-pointer">
+                        <Avatar className="h-14 w-14 flex-shrink-0">
+                          <AvatarImage src={person.photo} alt={person.name} className="object-cover" />
+                          <AvatarFallback className="bg-primary text-primary-foreground text-sm">
+                            {person.initials}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div className="flex-1 min-w-0 text-left">
+                          <p className="font-medium text-sm truncate">{person.name}</p>
+                          <p className="text-xs text-primary font-medium truncate">{person.formerRole}</p>
+                        </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>{person.name}</DialogTitle>
+                      </DialogHeader>
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-4">
+                          <Avatar className="h-20 w-20">
+                            <AvatarImage src={person.photo} alt={person.name} className="object-cover" />
+                            <AvatarFallback className="bg-primary text-primary-foreground text-2xl">
+                              {person.initials}
+                            </AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <p className="font-medium">{person.formerRole}</p>
+                            <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                              <MapPin className="h-3 w-3" />
+                              <span>{person.location}</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="font-medium mb-1">Biography</h4>
+                          <p className="text-sm text-muted-foreground">{person.biography}</p>
+                        </div>
+                        {person.currentEndeavors && (
+                          <div>
+                            <h4 className="font-medium mb-1">Current Pursuits</h4>
+                            <p className="text-sm text-muted-foreground">{person.currentEndeavors}</p>
+                          </div>
+                        )}
+                        <div>
+                          <h4 className="font-medium mb-1">Contact</h4>
+                          <a href={`mailto:${person.email}`} className="flex items-center gap-2 text-sm text-primary hover:underline">
+                            <Mail className="h-4 w-4" />
+                            {person.email}
+                          </a>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                ))}
+              </div>
+            </CollapsibleContent>
           </Collapsible>
         </div>
       </section>
