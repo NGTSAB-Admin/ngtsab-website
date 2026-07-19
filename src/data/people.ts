@@ -3,23 +3,27 @@ import abigailPhoto from "@/assets/abigail-riead.jpg";
 import calebPhoto from "@/assets/caleb-olson.jpg";
 import annMaryPhoto from "@/assets/ann-mary-thomas.jpg";
 import haleyPhoto from "@/assets/haley-becker.jpg";
+import mattZakreskiPhoto from "@/assets/matt-zakreski.jpg";
 
 export interface Person {
   slug: string;
   name: string;
   initials: string;
   role: string;
-  location: string;
+  location?: string;
   city?: string;
   state?: string;
   photo?: string;
   bio: string;
   duties?: string;
   biography?: string;
-  email: string;
+  email?: string;
   // Alumni-specific fields
   formerRole?: string;
   currentEndeavors?: string;
+  // Sponsor-specific fields
+  links?: { label: string; url: string }[];
+  contribution?: string;
 }
 
 // ============================================================
